@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Quiz App V2</title>
+  </head>
+  <body>
+    <div id="home-page">
+      <div class="container">
+        <div id="home" class="flex-center flex-comumn">
+          <h1>Quiz</h1>
+          <div class="buttons">
+            <a class="btn" href="#game" id="play-btn">Play</a>
+            <a class="btn" href="#hight_score" id="get-hight-scores"
+              >Hieght Scores</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="game" class="hidden">
+      <div class="container">
+        <!-- <div id="loader"></div> -->
+        <div id="games" class="justify-center flex-comumn">
+          <div id="hud">
+            <div id="hud-item">
+              <p id="progress-text" class="hud-prefix">
+                Question
+                <span class="hud-main-text" id="question-counter"></span>
+              </p>
+              <div id="progress-bar">
+                <div id="progress-bar-full"></div>
+              </div>
+            </div>
+            <div id="hud-item">
+              <p class="hud-prefix">Score</p>
+              <h1 class="hud-main-text" id="score">0</h1>
+            </div>
+          </div>
+          <h2 id="question">what's your name</h2>
+          <div class="choice-container">
+            <p class="choice-prefix">A</p>
+            <p class="choice-text" data-number="1"></p>
+          </div>
+          <div class="choice-container">
+            <p class="choice-prefix">B</p>
+            <p class="choice-text" data-number="2"></p>
+          </div>
+          <div class="choice-container">
+            <p class="choice-prefix">C</p>
+            <p class="choice-text" data-number="3"></p>
+          </div>
+          <div class="choice-container">
+            <p class="choice-prefix">D</p>
+            <p class="choice-text" data-number="4"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="end" class="hidden">
+      <div class="container">
+        <div id="end-game">
+          <h1 id="finalScore"></h1>
+          <form>
+            <input
+              type="text"
+              name="username"
+              id="username"
+              placeholder="username"
+            />
+            <button
+              type="submit"
+              class="btn"
+              id="saveScoreBtn"
+              onclick="saveHightScore(event)"
+              disabled
+            >
+              Save
+            </button>
+          </form>
+          <a href="#game" class="btn" id="go-game">Play Again</a>
+          <a href="#home-page" class="btn" id="go-home">Go Home</a>
+        </div>
+      </div>
+    </div>
+    <div id="hight_score" class="hidden">
+      <div class="container">
+        <div id="all-hight-scores" class="flex-center flex-column">
+          <h1 id="final-all">High Scores</h1>
+          <ul id="highScoresList"></ul>
+          <a class="btn" href="#home-page" id="back-home">Go Home</a>
+        </div>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
